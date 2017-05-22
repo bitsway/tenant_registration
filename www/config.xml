@@ -6,10 +6,10 @@
         id        = "com.yeapps.cs"
         version   = "1.0.0">
 
-    <name>BMC</name>
+    <name>TenantRegistration</name>
 
     <description>
-       Bangladeshi Medical Cases
+       Tenant Registration
     </description>
 
     <author href="businesssolutionapps.com" email="sabbir456@gmail.com">
