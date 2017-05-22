@@ -1,0 +1,199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DMP</title>
+    <link rel="stylesheet" href="static/c.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/jqm-demos.css"> 
+   
+    <script src="static/jquery-1.10.2.min.js">   </script>
+    <script src="static/jquery.mobile-1.4.0.min.js">   </script>		
+    
+	<script src="static/tenant.js">   </script>
+	
+    <script>
+    		
+    </script>
+	       
+    <style>	
+        
+    </style>	
+</head>
+
+<body >
+	
+	<div data-role="page" class="jqm-demos jqm-home" id="home_page">
+		
+		<div role="main" class="ui-content jqm-content" style="padding-top:0px">
+			<img src="images/dmp.png" alt="" style="margin:1.5em 0 0 0"/>
+			<h2 style="text-align:center">Tenant Registration</h2>
+			
+			<button class="ui-btn ui-shadow" onclick="regBtn()">Registration Form</button>
+			<button class="ui-btn ui-shadow" onclick="authorizeLandlord()">Authorize Landlord</button>
+			<button class="ui-btn ui-shadow" onclick="aaaaa()">Police Station</button>
+		</div>
+	</div>
+	
+	<div data-role="page" class="jqm-demos jqm-home" id="authorisation_page">
+		
+		<div role="main" class="ui-content jqm-content" style="padding-top:0px">
+			<br />
+			<label for="auth_code" id="lid">Authorization code provide by the Landlord:</label>
+			<input name="auth_code" id="auth_code" value="" type="text">
+			<label for="mypin" id="lid">My PIN:</label>
+			<input name="mypin" id="mypin" value="" type="text">
+			<i id='authError'></i>
+			<button class="ui-btn ui-shadow" onclick="authSubmit()" id="authSubmitV">Next</button>
+			<div id="l_info" style="display:none">
+				<img src="images/avatar.jpg" alt="" width="100" height="100" style="margin:0 28%"/>
+				<address style="border:1px dashed #4C9ED9; padding:5px 10px; border-radius:5px; margin:10px 0">
+					House No : 12/B <br> 
+					Floor : 5<br>
+					Road No : 6<br>
+					Address : Basundhara R/A.<br>
+					Thana : Bhatara.<br>
+					Dhaka. 1205
+				</address>
+				<button class="ui-btn ui-shadow" onclick="landInfoNext()" id="">Next</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" class="jqm-demos jqm-home" id="regPage">
+		
+		<div role="main" class="ui-content jqm-content"  style="padding-top:0px">
+			<img src="images/dmp.png" alt="" style="margin:1.5em 0 0 0"/>
+			<h2 style="text-align:center">Tenant Registration Form</h2>
+			<label for="tenants">House Owner/Tenant's Name:</label>
+			<input name="tenants" id="tenants" value="" type="text">
+			
+			<label for="fName">Father's Name:</label>
+			<input name="fName" id="fName" value="" type="text">
+			
+			<label for="dob">Date of Birth:</label>
+			<input data-role="date" type="text" name="dob" id="dob">
+			
+			<label for="maritalStatus">Marital Status:</label>
+			<input name="" id="maritalStatus" value="" type="text">
+			
+			<label for="pma">Permanent Address:</label>
+			<input name="pma" id="pma" value="" type="text">
+			
+			<label for="occupation">Occupation and Office Address:</label>
+			<input name="occupation" id="occupation" value="" type="text">
+			
+			<label for="religion">Religion:</label>
+			<input name="religion" id="religion" value="" type="text">
+			
+			<label for="education">Educational Qualification:</label>
+			<input name="education" id="education" value="" type="text">
+			
+			<label for="mobile">Mobile Number:</label>
+			<input name="mobile" id="mobile" value="" type="number">
+			
+			<label for="email">Email ID:</label>
+			<input name="email" id="email" value="" type="text">
+			
+			<label for="nid">National ID Number:</label>
+			<input name="nid" id="nid" value="" type="text">
+			
+			<label for="passport">Passport(if any):</label>
+			<input name="passport" id="passport" value="" type="text">
+			
+			<label>&nbsp;</label>
+			<fieldset style="border:1px dashed #4C9ED9; padding:10px; border-radius:5px;">
+				<legend>Imergencey Contract</legend>
+				<label for="contname">Name:</label>
+				<input name="contname" id="contname" value="" type="text">
+				<label for="realation">Relation:</label>
+				<input name="realation" id="realation" value="" type="text">
+				<label for="contAddress">Address:</label>
+				<input name="contAddress" id="contAddress" value="" type="text">
+				<label for="contMobile">Mobile:</label>
+				<input name="contMobile" id="contMobile" value="" type="number">
+			</fieldset>
+			
+			<label>&nbsp;</label>
+			<fieldset style="border:1px dashed #4C9ED9; padding:10px; border-radius:5px;">
+				<legend>House Worker</legend>
+				<label for="houseWorkername">Name:</label>
+				<input name="houseWorkername" id="houseWorkername" value="" type="text">
+				<label for="houseWorkerNID">NID:</label>
+				<input name="houseWorkerNID" id="houseWorkerNID" value="" type="number">
+				<label for="houseWorkerMobile">Mobile:</label>
+				<input name="houseWorkerMobile" id="houseWorkerMobile" value="" type="number">
+				<label for="hwPaddr">Permanent Address:</label>
+				<input name="hwPaddr" id="hwPaddr" value="" type="text">
+			</fieldset>
+			
+			<label>&nbsp;</label>
+			<fieldset style="border:1px dashed #4C9ED9; padding:10px; border-radius:5px;">
+				<legend>Driver Name</legend>
+				<label for="drivername">Name:</label>
+				<input name="drivername" id="drivername" value="" type="text">
+				<label for="driverNID">NID:</label>
+				<input name="driverNID" id="driverNID" value="" type="number">
+				<label for="driverMobile">Mobile:</label>
+				<input name="driverMobile" id="driverMobile" value="" type="number">
+				<label for="driverPaddr">Permanent Address:</label>
+				<input name="driverPaddr" id="driverPaddr" value="" type="text">
+			</fieldset>
+			<label for="">&nbsp;</label>
+			<fieldset style="border:1px dashed #4C9ED9; padding:10px; border-radius:5px;">
+				<legend>Privious House Owner</legend>
+				<label for="prHOname">Name:</label>
+				<input name="prHOname" id="prHOname" value="" type="text">
+				<label for="prHOMobile">Mobile:</label>
+				<input name="prHOMobile" id="prHOMobile" value="" type="number">
+				<label for="prHOPaddr">Address:</label>
+				<input name="prHOPaddr" id="prHOPaddr" value="" type="text">
+			</fieldset>
+			<label>&nbsp;</label>
+			<label for="rophleave">Reason of Preavious House Leave:</label>
+			<input name="rophleave" id="rophleave" value="" type="text">
+			<label>&nbsp;</label>
+			<fieldset style="border:1px dashed #4C9ED9; padding:10px; border-radius:5px;">
+				<legend>Present House Owner</legend>
+				<label for="presentHOname">Name:</label>
+				<input name="presentHOname" id="presentHOname" value="" type="text">
+				<label for="presentHOMobile">Mobile:</label>
+				<input name="presentHOMobile" id="presentHOMobile" value="" type="number">
+			</fieldset>
+			<label >&nbsp;</label>
+			<label for="stdpresentHouse">Start Date of Present House:</label>
+			<input name="stdpresentHouse" id="stdpresentHouse" value="" type="text">
+			<br />
+			<button class="ui-btn ui-shadow" onclick="regNext()">Next</button>
+		</div>
+	</div>
+	
+	<div data-role="page" class="jqm-demos jqm-home" id="reg_image_page">
+		
+		<div role="main" class="ui-content jqm-content" style="padding-top:0px">
+			<div id="success_sub" style="">
+				<img src="images/avatar.jpg" alt="" width="100" height="100" style="margin:0 28%"/>
+				
+				<button class="ui-btn ui-shadow" onclick="regFinalSubmission()" id="finalSumit">Sumit</button>
+			</div>
+			<div style="display:none; text-align:center" id="success_message">
+				<span style="color:#4CAF50">Your Submission is successful <br /> Thank You</span>
+				<button class="ui-btn ui-shadow" onclick="goHome()" id="goHome">Home</button>
+			</div>
+		</div>
+	</div>
+	
+	<div data-role="page" class="jqm-demos jqm-home" id="authorise_landlord">
+		
+		<div role="main" class="ui-content jqm-content" style="padding-top:0px">
+			<br />
+			<label for="auth_code" id="lid">Landlord Mobile Number:</label>
+			<input name="auth_code" id="auth_code" value="" type="number">
+			<button class="ui-btn ui-shadow" onclick="" id="">Sumit</button>
+		</div>
+	</div>
+<script type="text/javascript" src="phonegap.js"></script>
+
+</body>
+</html>

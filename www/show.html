@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Page Show</title>
+<script src="js/jquery.min.js"></script>
+
+<script>
+$(document).ready(function(){
+	var nVal = localStorage.getItem('item');
+	var valBr = nVal.split(',');
+	for(i=0; i < valBr.length; i++){
+		$("ul").append("<li>"+valBr[i]+"</li>");
+		//alert('Value'+valBr[i]);
+	}
+	
+     
+ });
+</script>
+</head>
+<body>
+<ul id="licity">
+	
+</ul>
+</body>
+</html> 
