@@ -1,5 +1,4 @@
 function regBtn(){
-	//alert('Hello');
 	url="#authorisation_page";					
 	$.mobile.navigate(url);
 }
@@ -33,8 +32,11 @@ function regNext(){
 }
 
 function regFinalSubmission(){
-	$('button').remove('#finalSumit');
-	$('#success_message').show();
+	//$('button').remove('#finalSumit');
+	alert('Submit Successfully');
+	url="#home_page";					
+	$.mobile.navigate(url);
+	//$('#success_message').show();
 }
 
 function goHome(){
